@@ -153,7 +153,7 @@
                 // Create glare element
                 $(this).append('<div class="js-tilt-glare"><div class="js-tilt-glare-inner"></div></div>');
 
-            // Store glare selector if glare is enabled
+            // Main glare selector if glare is enabled
             this.glareElementWrapper = $(this).find(".js-tilt-glare");
             this.glareElement = $(this).find(".js-tilt-glare-inner");
 
@@ -257,7 +257,7 @@
             }, options);
 
             this.init = function () {
-                // Store settings
+                // Main settings
                 $(_this4).data('settings', _this4.settings);
 
                 // Prepare element
