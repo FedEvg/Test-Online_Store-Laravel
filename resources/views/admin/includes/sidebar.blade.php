@@ -37,20 +37,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>Brand</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{ route('admin.color.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-solid fa-palette"></i>
                         <p>Color</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{ route('admin.brand.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-solid fa-tag"></i>
+                        <p>Brand</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.size.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-solid fa-font"></i>
                         <p>Size</p>
                     </a>
                 </li>

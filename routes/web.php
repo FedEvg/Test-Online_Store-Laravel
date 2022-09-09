@@ -19,6 +19,34 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
         Route::patch('/{category}', 'UpdateController')->name('admin.category.update');
         Route::delete('/{category}/', 'DestroyController')->name('admin.category.destroy');
     });
+    Route::group(['namespace' => 'Color', 'prefix' => 'colors'], function () {
+        Route::get('/', 'IndexController')->name('admin.color.index');
+        Route::get('/create', 'CreateController')->name('admin.color.create');
+        Route::post('/', 'StoreController')->name('admin.color.store');
+        Route::get('/{color}', 'ShowController')->name('admin.color.show');
+        Route::get('/{color}/edit', 'EditController')->name('admin.color.edit');
+        Route::patch('/{color}', 'UpdateController')->name('admin.color.update');
+        Route::delete('/{color}/', 'DestroyController')->name('admin.color.destroy');
+    });
+    Route::group(['namespace' => 'Brand', 'prefix' => 'brands'], function () {
+        Route::get('/', 'IndexController')->name('admin.brand.index');
+        Route::get('/create', 'CreateController')->name('admin.brand.create');
+        Route::post('/', 'StoreController')->name('admin.brand.store');
+        Route::get('/{brand}', 'ShowController')->name('admin.brand.show');
+        Route::get('/{brand}/edit', 'EditController')->name('admin.brand.edit');
+        Route::patch('/{brand}', 'UpdateController')->name('admin.brand.update');
+        Route::delete('/{brand}/', 'DestroyController')->name('admin.brand.destroy');
+    });
+    Route::group(['namespace' => 'Size', 'prefix' => 'sizes'], function () {
+        Route::get('/', 'IndexController')->name('admin.size.index');
+        Route::get('/create', 'CreateController')->name('admin.size.create');
+        Route::post('/', 'StoreController')->name('admin.size.store');
+        Route::get('/{size}', 'ShowController')->name('admin.size.show');
+        Route::get('/{size}/edit', 'EditController')->name('admin.size.edit');
+        Route::patch('/{size}', 'UpdateController')->name('admin.size.update');
+        Route::delete('/{size}/', 'DestroyController')->name('admin.size.destroy');
+    });
+
 });
 
 Auth::routes();
