@@ -3213,8 +3213,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      **
      * See also @Element.removeData
      > Parameters
-     - key (string) key to store data
-     - value (any) #optional value to store
+     - key (string) key to main data
+     - value (any) #optional value to main
      = (object) @Element
      * or, if value is not specified:
      = (any) value

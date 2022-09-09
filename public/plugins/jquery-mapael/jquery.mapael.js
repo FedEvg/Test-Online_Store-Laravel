@@ -1600,7 +1600,7 @@
             var self = this;
             var plot = {};
 
-            // Get plot options and store it
+            // Get plot options and main it
             plot.options = self.getElemOptions(
                 self.options.map.defaultPlot,
                 (self.options.plots[id] ? self.options.plots[id] : {}),

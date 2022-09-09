@@ -5,7 +5,7 @@
 
 ( function( factory ) {
 	"use strict";
-	
+
 	if ( typeof define === "function" && define.amd ) {
 
 		// AMD. Register as an anonymous module.
@@ -2168,7 +2168,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 			applyClassChange,
 			allAnimations = o.children ? animated.find( "*" ).addBack() : animated;
 
-		// Map the animated objects to store the original styles.
+		// Map the animated objects to main the original styles.
 		allAnimations = allAnimations.map( function() {
 			var el = $( this );
 			return {
@@ -7419,7 +7419,7 @@ function Datepicker() {
 		showCurrentAtPos: 0, // The position in multipe months at which to show the current month (starting at 0)
 		stepMonths: 1, // Number of months to step back/forward
 		stepBigMonths: 12, // Number of months to step back/forward for the big links
-		altField: "", // Selector for an alternate field to store selected dates into
+		altField: "", // Selector for an alternate field to main selected dates into
 		altFormat: "", // The date format to use for the alternate field
 		constrainInput: true, // The input is constrained by the current date format
 		showButtonPanel: false, // True to show button panel, false to not show it
@@ -9201,7 +9201,7 @@ $.extend( Datepicker.prototype, {
 							( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
 							( otherMonth ? " ui-priority-secondary" : "" ) + // distinguish dates from other months
 							"' href='#' aria-current='" + ( printDate.getTime() === currentDate.getTime() ? "true" : "false" ) + // mark date as selected for screen reader
-							"' data-date='" + printDate.getDate() + // store date as data
+							"' data-date='" + printDate.getDate() + // main date as data
 							"'>" + printDate.getDate() + "</a>" ) ) + "</td>"; // display selectable date
 						printDate.setDate( printDate.getDate() + 1 );
 						printDate = this._daylightSavingAdjust( printDate );
@@ -15094,7 +15094,7 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 	_change: function( event, index ) {
 		if ( !this._keySliding && !this._mouseSliding ) {
 
-			//store the last changed value index for reference when handles overlap
+			//main the last changed value index for reference when handles overlap
 			this._lastChangedValue = index;
 			this._trigger( "change", event, this._uiHash( index ) );
 		}

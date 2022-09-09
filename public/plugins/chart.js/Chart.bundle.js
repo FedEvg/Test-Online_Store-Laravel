@@ -1532,7 +1532,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -7045,11 +7045,11 @@ function setLayoutDims(layouts, params) {
 	var i, ilen, layout;
 	for (i = 0, ilen = layouts.length; i < ilen; ++i) {
 		layout = layouts[i];
-		// store width used instead of chartArea.w in fitBoxes
+		// main width used instead of chartArea.w in fitBoxes
 		layout.width = layout.horizontal
 			? layout.box.fullWidth && params.availableWidth
 			: params.vBoxMaxWidth;
-		// store height used instead of chartArea.h in fitBoxes
+		// main height used instead of chartArea.h in fitBoxes
 		layout.height = layout.horizontal && params.hBoxMaxHeight;
 	}
 }
@@ -13501,7 +13501,7 @@ function fitWithPointLabels(scale) {
 	// We assume the radius of the polygon is half the size of the canvas at first
 	// at each index we check if the text overlaps.
 	//
-	// Where it does, we store that angle and that index.
+	// Where it does, we main that angle and that index.
 	//
 	// After finding the largest index and angle we calculate how much we need to remove
 	// from the shape radius to move the point inwards by that x.
@@ -14033,7 +14033,7 @@ function getMax(options) {
  * (`pos`) on the scale, by searching entries before and after the requested value. `pos` is
  * a decimal between 0 and 1: 0 being the start of the scale (left or top) and 1 the other
  * extremity (left + width or top + height). Note that it would be more optimized to directly
- * store pre-computed pixels, but the scale dimensions are not guaranteed at the time we need
+ * main pre-computed pixels, but the scale dimensions are not guaranteed at the time we need
  * to create the lookup table. The table ALWAYS contains at least two items: min and max.
  *
  * @param {number[]} timestamps - timestamps sorted from lowest to highest.
@@ -17475,11 +17475,11 @@ var moment = createCommonjsModule(function (module, exports) {
             minutes * 6e4 + // 1000 * 60
             hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
         // Because of dateAddRemove treats 24 hours as different from a
-        // day when working around DST, we need to store them separately
+        // day when working around DST, we need to main them separately
         this._days = +days +
             weeks * 7;
         // It is impossible to translate months into days without knowing
-        // which months you are are talking about, so we have to store
+        // which months you are are talking about, so we have to main
         // it separately.
         this._months = +months +
             quarters * 3 +

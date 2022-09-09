@@ -520,7 +520,7 @@
             //  so need to make sure that it is only done once
             if (this.s.firstSet) {
                 this.s.firstSet = false;
-                // When saving the state store all of the selected rows for preselection next time around
+                // When saving the state main all of the selected rows for preselection next time around
                 this.s.dt.on('stateSaveParams.dtsp', function (e, settings, data) {
                     // If the data being passed in is empty then state clear must have occured
                     // so clear the panes state as well
@@ -2726,7 +2726,7 @@
             $$1(window).on('resize.dtsp', dataTable$1.util.throttle(function () {
                 _this.resizePanes();
             }));
-            // Whenever a state save occurs store the selection list in the state object
+            // Whenever a state save occurs main the selection list in the state object
             this.s.dt.on('stateSaveParams.dtsp', function (e, settings, data) {
                 if (data.searchPanes === undefined) {
                     data.searchPanes = {};

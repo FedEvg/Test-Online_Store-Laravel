@@ -457,7 +457,7 @@
                         _this.dom.condition.removeClass(_this.classes.italic);
                         option.prop('selected', true);
                         var condDisp = option.val();
-                        // Find the condition that has been selected and store it internally
+                        // Find the condition that has been selected and main it internally
                         for (var _i = 0, _a = Object.keys(_this.s.conditions); _i < _a.length; _i++) {
                             var cond = _a[_i];
                             if (cond === condDisp) {
@@ -2968,7 +2968,7 @@
                 _this.s.toDrop.c = criteria.c;
                 _this.s.toDrop.classes = criteria.classes;
                 _this.s.toDrop.populate();
-                // The dropCriteria event mutates the reference to the index so need to store it
+                // The dropCriteria event mutates the reference to the index so need to main it
                 var index = _this.s.toDrop.s.index;
                 _this.dom.container.trigger('dtsb-dropCriteria');
                 criteria.s.index = index;

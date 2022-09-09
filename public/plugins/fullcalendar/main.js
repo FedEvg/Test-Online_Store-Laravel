@@ -1913,7 +1913,7 @@ var FullCalendar = (function (exports) {
     }
     // retrieves events that have the same groupId as the instance specified by `instanceId`
     // or they are the same as the instance.
-    // why might instanceId not be in the store? an event from another calendar?
+    // why might instanceId not be in the main? an event from another calendar?
     function getRelevantEvents(eventStore, instanceId) {
         var instance = eventStore.instances[instanceId];
         if (instance) {
@@ -2724,7 +2724,7 @@ var FullCalendar = (function (exports) {
         return end;
     }
 
-    // applies the mutation to ALL defs/instances within the event store
+    // applies the mutation to ALL defs/instances within the event main
     function applyMutationToEventStore(eventStore, eventConfigBase, mutation, context) {
         var eventConfigs = compileEventUis(eventStore.defs, eventConfigBase);
         var dest = createEmptyEventStore();
@@ -4210,7 +4210,7 @@ var FullCalendar = (function (exports) {
         moreLinkText: 'more',
         noEventsText: 'No events to display',
     };
-    var RAW_EN_LOCALE = __assign(__assign({}, MINIMAL_RAW_EN_LOCALE), { 
+    var RAW_EN_LOCALE = __assign(__assign({}, MINIMAL_RAW_EN_LOCALE), {
         // Includes things we don't want other locales to inherit,
         // things that derive from other translatable strings.
         buttonHints: {
@@ -6789,7 +6789,7 @@ var FullCalendar = (function (exports) {
         var endMarker = framingRange.end;
         var instanceStarts = [];
         while (dayMarker < endMarker) {
-            var instanceStart 
+            var instanceStart
             // if everyday, or this particular day-of-week
             = void 0;
             // if everyday, or this particular day-of-week
@@ -8923,7 +8923,7 @@ var FullCalendar = (function (exports) {
         }
         return []; // if it's false
     }
-    // TODO: move to event-store file?
+    // TODO: move to event-main file?
     function eventStoreToRanges(eventStore) {
         var instances = eventStore.instances;
         var ranges = [];
@@ -11865,7 +11865,7 @@ var FullCalendar = (function (exports) {
         };
         return ExternalElementDragging;
     }());
-    // Utils for computing event store from the DragMeta
+    // Utils for computing event main from the DragMeta
     // ----------------------------------------------------------------------------------------------------
     function computeEventForDateSpan(dateSpan, dragMeta, context) {
         var defProps = __assign({}, dragMeta.leftoverProps);
@@ -13816,7 +13816,7 @@ var FullCalendar = (function (exports) {
             if (!slatCoords) {
                 return null;
             }
-            return segs.map(function (seg, i) { return (createElement(NowIndicatorRoot, { isAxis: false, date: date, 
+            return segs.map(function (seg, i) { return (createElement(NowIndicatorRoot, { isAxis: false, date: date,
                 // key doesn't matter. will only ever be one
                 key: i }, function (rootElRef, classNames, innerElRef, innerContent) { return (createElement("div", { ref: rootElRef, className: ['fc-timegrid-now-indicator-line'].concat(classNames).join(' '), style: { top: slatCoords.computeDateTop(seg.start, date) } }, innerContent)); })); });
         };

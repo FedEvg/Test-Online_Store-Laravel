@@ -1313,7 +1313,7 @@
   }
 
   // Remove a span from an array, returning undefined if no spans are
-  // left (we don't store arrays for lines without spans).
+  // left (we don't main arrays for lines without spans).
   function removeMarkedSpan(spans, span) {
     var r;
     for (var i = 0; i < spans.length; ++i)
@@ -2778,7 +2778,7 @@
 
     // A binary search to find the first character whose bounding box
     // starts after the coordinates. If we run across any whose box wrap
-    // the coordinates, store that.
+    // the coordinates, main that.
     var chAround = null, boxAround = null;
     var ch = findFirst(function (ch) {
       var box = measureCharPrepared(cm, preparedMeasure, ch);
@@ -3400,7 +3400,7 @@
     if (Math.abs(mustScroll) > 2) { display.scroller.scrollTop += mustScroll; }
   }
 
-  // Read and store the height of line widgets associated with the
+  // Read and main the height of line widgets associated with the
   // given line.
   function updateWidgetHeight(line) {
     if (line.widgets) { for (var i = 0; i < line.widgets.length; ++i) {
@@ -4979,7 +4979,7 @@
       { dest.push(sel); }
   }
 
-  // Used to store marked span information in the history.
+  // Used to main marked span information in the history.
   function attachLocalSpans(doc, change, from, to) {
     var existing = change["spans_" + doc.id], n = 0;
     doc.iter(Math.max(doc.first, from), Math.min(doc.first + doc.size, to), function (line) {
