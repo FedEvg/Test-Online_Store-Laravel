@@ -46,6 +46,15 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
         Route::patch('/{size}', 'UpdateController')->name('admin.size.update');
         Route::delete('/{size}/', 'DestroyController')->name('admin.size.destroy');
     });
+    Route::group(['namespace' => 'Clothing', 'prefix' => 'clothes'], function () {
+        Route::get('/', 'IndexController')->name('admin.clothing.index');
+        Route::get('/create', 'CreateController')->name('admin.clothing.create');
+        Route::post('/', 'StoreController')->name('admin.clothing.store');
+        Route::get('/{clothing}', 'ShowController')->name('admin.clothing.show');
+        Route::get('/{clothing}/edit', 'EditController')->name('admin.clothing.edit');
+        Route::patch('/{clothing}', 'UpdateController')->name('admin.clothing.update');
+        Route::delete('/{clothing}/', 'DestroyController')->name('admin.clothing.destroy');
+    });
 
 });
 

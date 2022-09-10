@@ -12,23 +12,9 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-                <li class="nav-header">EXAMPLES</li>
 
                 <li class="nav-item">
                     <a href="{{ route('admin.category.index') }}" class="nav-link">
@@ -55,8 +41,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{ route('admin.clothing.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-solid fa-vest-patches"></i>
                         <p>Clothing</p>
                     </a>
                 </li>
@@ -68,7 +54,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-solid fa-users"></i>
                         <p>Users</p>
                     </a>
                 </li>
