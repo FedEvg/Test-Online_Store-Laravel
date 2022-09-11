@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Clothing;
 
-use App\Http\Controllers\Controller;
 use App\Models\Clothing;
 
-class DestroyController extends Controller
+class DestroyController extends BaseController
 {
     public function __invoke(Clothing $clothing)
     {

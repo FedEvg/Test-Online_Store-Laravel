@@ -33,4 +33,9 @@ class Clothing extends Model
     {
         return $this->belongsToMany(Size::class, 'clothing_sizes', 'clothing_id', 'size_id');
     }
+
+    public function images()
+    {
+        return $this->belongsToMany(Image::class, 'clothing_images', 'clothing_id', 'image_id');
+    }
 }

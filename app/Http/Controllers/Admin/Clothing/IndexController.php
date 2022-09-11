@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Clothing;
 
-use App\Http\Controllers\Controller;
 use App\Models\Clothing;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {

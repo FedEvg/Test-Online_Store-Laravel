@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin\Clothing;
 
-use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Clothing;
 use App\Models\Color;
 use App\Models\Size;
 
-class EditController extends Controller
+class EditController extends BaseController
 {
     public function __invoke(Clothing $clothing)
     {

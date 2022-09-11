@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.image.index') }}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>Images</p>
                     </a>

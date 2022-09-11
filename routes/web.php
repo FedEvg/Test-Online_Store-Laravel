@@ -55,6 +55,15 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
         Route::patch('/{clothing}', 'UpdateController')->name('admin.clothing.update');
         Route::delete('/{clothing}/', 'DestroyController')->name('admin.clothing.destroy');
     });
+    Route::group(['namespace' => 'Image', 'prefix' => 'images'], function () {
+        Route::get('/', 'IndexController')->name('admin.image.index');
+        Route::get('/create', 'CreateController')->name('admin.image.create');
+        Route::post('/', 'StoreController')->name('admin.image.store');
+        Route::get('/{image}', 'ShowController')->name('admin.image.show');
+        Route::get('/{image}/edit', 'EditController')->name('admin.image.edit');
+        Route::patch('/{image}', 'UpdateController')->name('admin.image.update');
+        Route::delete('/{image}/', 'DestroyController')->name('admin.image.destroy');
+    });
 
 });
 
