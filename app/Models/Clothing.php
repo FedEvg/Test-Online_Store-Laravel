@@ -10,6 +10,17 @@ class Clothing extends Model
 {
     use HasFactory, SoftDeletes;
 
+    const STATUS_MISSING = 0;
+    const STATUS_AVAILABLE = 1;
+
+    public static function getStatus()
+    {
+        return [
+            self::STATUS_MISSING => 'Missing',
+            self::STATUS_AVAILABLE => 'Available',
+        ];
+    }
+
     protected $table = 'clothing';
 
     protected $guarded = [];

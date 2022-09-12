@@ -80,8 +80,8 @@
                                 <td>{{ $clothing->quantity }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Availability</th>
-                                <td>{{ $clothing->availability_id }}</td>
+                                <th scope="row">Availability status</th>
+                                <td>{{ $clothing->status_id }}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Price</th>

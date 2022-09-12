@@ -16,7 +16,8 @@ class EditController extends BaseController
         $brands = Brand::all();
         $colors = Color::all();
         $sizes = Size::all();
+        $statuses = Clothing::getStatus();
 
-        return view('admin.clothing.edit', compact('clothing', 'categories', 'brands', 'colors', 'sizes'));
+        return view('admin.clothing.edit', compact('clothing', 'categories', 'brands', 'colors', 'sizes', 'statuses'));
     }
 }

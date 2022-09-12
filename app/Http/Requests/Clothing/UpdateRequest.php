@@ -32,7 +32,7 @@ class UpdateRequest extends FormRequest
             'size_ids' => 'nullable|array',
 //            'size_id' => 'required|exists:sizes,id',
             'quantity' => 'required|integer',
-            'availability_id' => 'required',
+            'status_id' => 'required',
             'price' => 'required|integer',
             'discount' => ''
         ];

@@ -112,12 +112,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Availability</label>
-                                        <select class="form-control" name="availability_id">
-                                            <option>1</option>
+                                        <label>Availability status</label>
+                                        <select class="form-control" name="status_id">
+                                            @foreach($statuses as $id => $role)
+                                            <option value="{{ $id }}">{{ $role }}</option>
+                                            @endforeach
                                         </select>
                                         <p class="text-danger">
-                                            @error('availability_id')
+                                            @error('status_id')
                                             {{ $message }}
                                             @enderror
                                         </p>
