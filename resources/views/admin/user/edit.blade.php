@@ -75,20 +75,10 @@
                             <div class="form-group">
                                 <label>Role</label>
                                 <select class="form-control" name="role_id">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                </select>
-                                <p class="text-danger">
-                                    @error('role_id')
-                                    {{ $message }}
-                                    @enderror
-                                </p>
-                            </div>
-                            <div class="form-group">
-                                <label>Role</label>
-                                <select class="form-control" name="role_id">
                                     @foreach($roles as $id => $role)
-                                        <option value="{{ $id }}">{{ $role }}</option>
+                                        <option
+                                            {{ $id == $user->role_id ? ' selected' : '' }}
+                                            value="{{ $id }}">{{ $role }}</option>
                                     @endforeach
                                 </select>
                                 <p class="text-danger">

@@ -15,7 +15,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'file'
+            'path' => ''
         ];
     }
 }

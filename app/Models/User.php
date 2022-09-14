@@ -16,6 +16,11 @@ class User extends Authenticatable
     const ROLE_CLIENT = 0;
     const ROLE_ADMIN = 1;
 
+    public function fullName()
+    {
+        return $this->name." ".$this->surname." ".$this->patronimic;
+    }
+
     public static function getRoles()
     {
         return [

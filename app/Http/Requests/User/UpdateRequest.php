@@ -27,9 +27,9 @@ class UpdateRequest extends FormRequest
             'name' => '',
             'surname' => '',
             'patronymic' => '',
-            'phone' => 'required|string|unique:users',
-            'email' => 'required|email|unique:users',
-            'role_id' => '',
+            'phone' => 'required|string|unique:users,phone,'.$this->user->id,
+            'email' => 'required|email|unique:users,email,'.$this->user->id,
+            'role_id' => 'required|integer',
         ];
     }
 }

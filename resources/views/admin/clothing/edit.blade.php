@@ -22,7 +22,7 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
 
                         <form action="{{ route('admin.clothing.update', $clothing->id) }}" method="POST">
                             @csrf

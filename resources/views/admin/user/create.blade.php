@@ -31,7 +31,7 @@
                             @csrf
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" value="{{ old('') }}">
                                 <p class="text-danger">
                                     @error('name')
                                     {{ $message }}
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Surname</label>
-                                <input type="text" class="form-control" name="surname">
+                                <input type="text" class="form-control" name="surname" value="{{ old('surname') }}">
                                 <p class="text-danger">
                                     @error('surname')
                                     {{ $message }}
@@ -49,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Patronymic</label>
-                                <input type="text" class="form-control" name="patronymic">
+                                <input type="text" class="form-control" name="patronymic" value="{{ old('patronymic') }}">
                                 <p class="text-danger">
                                     @error('patronymic')
                                     {{ $message }}
@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" name="phone">
+                                <input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
                                 <p class="text-danger">
                                     @error('phone')
                                     {{ $message }}
@@ -67,18 +67,9 @@
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                                 <p class="text-danger">
                                     @error('email')
-                                    {{ $message }}
-                                    @enderror
-                                </p>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="password">
-                                <p class="text-danger">
-                                    @error('password')
                                     {{ $message }}
                                     @enderror
                                 </p>
@@ -87,7 +78,9 @@
                                 <label>Role</label>
                                 <select class="form-control" name="role_id">
                                     @foreach($roles as $id => $role)
-                                        <option value="{{ $id }}">{{ $role }}</option>
+                                        <option
+                                            {{ $id == old('role_id') ? ' selected' : '' }}
+                                            value="{{ $id }}">{{ $role }}</option>
                                     @endforeach
                                 </select>
                                 <p class="text-danger">

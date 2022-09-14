@@ -31,7 +31,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image">
+                                    <input type="file" class="custom-file-input" name="path[]" multiple>
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
                             </div>

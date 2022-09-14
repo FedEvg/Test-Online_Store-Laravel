@@ -16,11 +16,18 @@
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                 <i class="fas fa-search"></i>
             </a>
-
         </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input class="btn btn-danger btn-sm" type="submit" value="Log out"></input>
+                </form>
             </a>
         </li>
 

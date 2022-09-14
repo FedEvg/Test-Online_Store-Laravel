@@ -36,7 +36,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">Title</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -47,7 +47,7 @@
                                     <th scope="row">1</th>
                                     <td>
                                         <a href="{{ route('admin.clothing.show', $clothing->id) }}" class="link-secondary">
-                                            {{ $clothing->name }}
+                                            {{ $clothing->fullTitle() }}
                                         </a>
                                     </td>
                                     <td>

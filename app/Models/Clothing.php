@@ -20,6 +20,10 @@ class Clothing extends Model
             self::STATUS_AVAILABLE => 'Available',
         ];
     }
+    public function fullTitle()
+    {
+        return $this->category->name." ".$this->brand->name." ".$this->name ;
+    }
 
     protected $table = 'clothing';
 

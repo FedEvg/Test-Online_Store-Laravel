@@ -20,7 +20,6 @@ class StoreRequest extends FormRequest
             'patronymic' => '',
             'phone' => 'required|string|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required|string',
             'role_id' => '',
 
         ];

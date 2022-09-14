@@ -6,7 +6,7 @@ Route::group(['namespace' => '\App\Http\Controllers\Client\Main'], function () {
     Route::get('/', 'IndexController')->name('user.client.index');
 });
 
-Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth','admin']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
