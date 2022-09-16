@@ -34,7 +34,7 @@
                     @foreach($images as $image)
                         <div class="col-2 ">
                             <div class="card" style="width: 16rem;">
-                                <img src="{{ url('storage/' . $image->image) }}" alt="{{ $image->image }}" style="height: 10rem;" class="img-thumbnail">
+                                <img src="{{ url('storage/images/' . $image->path) }}" alt="{{ $image->path }}" style="height: 10rem;" class="img-thumbnail">
                                 <hr>
                                 <div class="row">
                                     <div class="col-6">

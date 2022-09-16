@@ -37,7 +37,7 @@
 
 <div class="main-wrapper">
 
-    @include('includes.user.header')
+    @include('includes.client.header')
 
     <div class="header-small-mobile section-padding-1">
         <div class="container-fluid">
@@ -317,7 +317,7 @@
 
     @yield('content')
 
-    @include('includes.user.footer')
+    @include('includes.client.footer')
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">

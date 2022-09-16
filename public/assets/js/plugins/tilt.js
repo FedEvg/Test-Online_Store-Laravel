@@ -43,7 +43,7 @@
         };
 
         /**
-         * When user mouse enters tilt element
+         * When client mouse enters tilt element
          */
         var mouseEnter = function mouseEnter(event) {
             this.ticking = false;
@@ -69,7 +69,7 @@
         };
 
         /**
-         * When user mouse moves over the tilt element
+         * When client mouse moves over the tilt element
          */
         var mouseMove = function mouseMove(event) {
             this.mousePositions = getMousePositions(event);
@@ -77,7 +77,7 @@
         };
 
         /**
-         * When user mouse leaves tilt element
+         * When client mouse leaves tilt element
          */
         var mouseLeave = function mouseLeave() {
             setTransition.call(this);
@@ -239,7 +239,7 @@
             var _this4 = this;
 
             /**
-             * Default settings merged with user settings
+             * Default settings merged with client settings
              * Can be set trough data attributes or as parameter.
              * @type {*}
              */

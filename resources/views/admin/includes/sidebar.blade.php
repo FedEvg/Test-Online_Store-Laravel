@@ -2,13 +2,13 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <!-- Sidebar client panel (optional) -->
+        <div class="user-panel">
             <div class="image">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <i class="nav-icon fa fa-solid fa-user-tie"></i>
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <p>{{ auth()->user()->name }}</p>
             </div>
         </div>
 
@@ -16,6 +16,12 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+                <li class="nav-item">
+                    <a href="{{ route('admin.main.index') }}" class="nav-link">
+                        <i class="nav-icon fa fa-solid fa-house-chimney"></i>
+                        <p>Main</p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon fa fa-layer-group"></i>
@@ -53,7 +59,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.user.index') }}" class="nav-link">
+                    <a href="{{ route('admin.client.index') }}" class="nav-link">
                         <i class="nav-icon fa fa-solid fa-users"></i>
                         <p>Users</p>
                     </a>

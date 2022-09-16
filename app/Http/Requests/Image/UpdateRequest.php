@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UpdateRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the client is authorized to make this request.
      *
      * @return bool
      */
@@ -24,7 +24,8 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|file'
+            'path' => 'required|string',
+            'clothing_id' => '',
         ];
     }
 }

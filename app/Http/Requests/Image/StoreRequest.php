@@ -15,7 +15,8 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'path' => ''
+            'path' => 'required|string',
+            'clothing_id' => '',
         ];
     }
 }

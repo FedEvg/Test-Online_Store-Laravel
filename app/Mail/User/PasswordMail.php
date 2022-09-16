@@ -20,6 +20,6 @@ class PasswordMail extends Mailable implements ShouldQueue
 
     public function build()
     {
-        return $this->markdown('mail.user.password');
+        return $this->markdown('mail.client.password');
     }
 }

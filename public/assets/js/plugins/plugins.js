@@ -452,7 +452,7 @@ function(t,i){var e="active",s="."+e,o="fp-section",n="."+o,r=n+s,h="fp-slide",a
         };
 
         /**
-         * When user mouse enters tilt element
+         * When client mouse enters tilt element
          */
         var mouseEnter = function mouseEnter(event) {
             this.ticking = false;
@@ -478,7 +478,7 @@ function(t,i){var e="active",s="."+e,o="fp-section",n="."+o,r=n+s,h="fp-slide",a
         };
 
         /**
-         * When user mouse moves over the tilt element
+         * When client mouse moves over the tilt element
          */
         var mouseMove = function mouseMove(event) {
             this.mousePositions = getMousePositions(event);
@@ -486,7 +486,7 @@ function(t,i){var e="active",s="."+e,o="fp-section",n="."+o,r=n+s,h="fp-slide",a
         };
 
         /**
-         * When user mouse leaves tilt element
+         * When client mouse leaves tilt element
          */
         var mouseLeave = function mouseLeave() {
             setTransition.call(this);
@@ -648,7 +648,7 @@ function(t,i){var e="active",s="."+e,o="fp-section",n="."+o,r=n+s,h="fp-slide",a
             var _this4 = this;
 
             /**
-             * Default settings merged with user settings
+             * Default settings merged with client settings
              * Can be set trough data attributes or as parameter.
              * @type {*}
              */

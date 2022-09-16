@@ -2121,7 +2121,7 @@ var FullCalendar = (function (exports) {
             var memberAdder = _a[_i];
             __assign(def, memberAdder(refined));
         }
-        // help out EventApi from having user modify props
+        // help out EventApi from having client modify props
         Object.freeze(def.ui.classNames);
         Object.freeze(def.extendedProps);
         return def;
@@ -3711,7 +3711,7 @@ var FullCalendar = (function (exports) {
             configurable: true
         });
         Object.defineProperty(EventApi.prototype, "classNames", {
-            // NOTE: user can't modify these because Object.freeze was called in event-def parsing
+            // NOTE: client can't modify these because Object.freeze was called in event-def parsing
             get: function () { return this._def.ui.classNames; },
             enumerable: false,
             configurable: true
@@ -8024,7 +8024,7 @@ var FullCalendar = (function (exports) {
     }(BaseComponent));
 
     /*
-    Detects when the user clicks on an event within a DateComponent
+    Detects when the client clicks on an event within a DateComponent
     */
     var EventClicking = /** @class */ (function (_super) {
         __extends(EventClicking, _super);
@@ -8059,7 +8059,7 @@ var FullCalendar = (function (exports) {
     }(Interaction));
 
     /*
-    Triggers events and adds/removes core classNames when the user's pointer
+    Triggers events and adds/removes core classNames when the client's pointer
     enters/leaves event-elements of a component.
     */
     var EventHovering = /** @class */ (function (_super) {
@@ -9564,7 +9564,7 @@ var FullCalendar = (function (exports) {
                     setRef(_this.props.elRef, el);
                 }
             };
-            // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
+            // Triggered when the client clicks *anywhere* in the document, for the autoHide feature
             _this.handleDocumentMouseDown = function (ev) {
                 // only hide the popover if the click happened outside the popover
                 var target = getEventTargetViaRoot(ev);
@@ -10066,7 +10066,7 @@ var FullCalendar = (function (exports) {
         PointerDragging.prototype.shouldIgnoreMouse = function () {
             return ignoreMouseDepth || this.isTouchDragging;
         };
-        // can be called by user of this class, to cancel touch-based scrolling for the current drag
+        // can be called by client of this class, to cancel touch-based scrolling for the current drag
         PointerDragging.prototype.cancelTouchScroll = function () {
             if (this.isDragging) {
                 isWindowTouchMoveCancelled = true;
@@ -10578,9 +10578,9 @@ var FullCalendar = (function (exports) {
         AutoScroller.prototype.buildCaches = function (scrollStartEl) {
             return this.queryScrollEls(scrollStartEl).map(function (el) {
                 if (el === window) {
-                    return new WindowScrollGeomCache(false); // false = don't listen to user-generated scrolls
+                    return new WindowScrollGeomCache(false); // false = don't listen to client-generated scrolls
                 }
-                return new ElementScrollGeomCache(el, false); // false = don't listen to user-generated scrolls
+                return new ElementScrollGeomCache(el, false); // false = don't listen to client-generated scrolls
             });
         };
         AutoScroller.prototype.queryScrollEls = function (scrollStartEl) {
@@ -10616,7 +10616,7 @@ var FullCalendar = (function (exports) {
             _this.minDistance = 0;
             _this.touchScrollAllowed = true; // prevents drag from starting and blocks scrolling during drag
             _this.mirrorNeedsRevert = false;
-            _this.isInteracting = false; // is the user validly moving the pointer? lasts until pointerup
+            _this.isInteracting = false; // is the client validly moving the pointer? lasts until pointerup
             _this.isDragging = false; // is it INTENTFULLY dragging? lasts until after revert animation
             _this.isDelayEnded = false;
             _this.isDistanceSurpassed = false;
@@ -10996,7 +10996,7 @@ var FullCalendar = (function (exports) {
     }
 
     /*
-    Monitors when the user clicks on a specific date/time of a component.
+    Monitors when the client clicks on a specific date/time of a component.
     A pointerdown+pointerup on the same "hit" constitutes a click.
     */
     var DateClicking = /** @class */ (function (_super) {
@@ -11037,7 +11037,7 @@ var FullCalendar = (function (exports) {
     }(Interaction));
 
     /*
-    Tracks when the user selects a portion of time of a component,
+    Tracks when the client selects a portion of time of a component,
     constituted by a drag over date cells, with a possible delay at the beginning of the drag.
     */
     var DateSelecting = /** @class */ (function (_super) {
@@ -11052,7 +11052,7 @@ var FullCalendar = (function (exports) {
                     component.isValidDateDownEl(ev.origEvent.target);
                 // don't bother to watch expensive moves if component won't do selection
                 dragging.setIgnoreMove(!canSelect);
-                // if touch, require user to hold down
+                // if touch, require client to hold down
                 dragging.delay = ev.isTouch ? getComponentTouchDelay$1(component) : null;
             };
             _this.handleDragStart = function (ev) {
