@@ -4,7 +4,6 @@
 @endsection
 @section('content')
     <div class="content-wrapper">
-
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -20,14 +19,12 @@
                 </div>
             </div>
         </div>
-
         <section class="content">
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-12">
-
-                        <form action="{{ route('admin.clothing.store') }}" method="POST">
+                        <form action="{{ route('admin.clothing.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-3">
@@ -46,7 +43,6 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Brand</label>
                                         <select class="form-control" name="brand_id">
@@ -62,7 +58,6 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -72,14 +67,13 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Color</label>
                                         <select class="select2bs4" name="color_ids[]" multiple="multiple"
                                                 data-placeholder="Select color" style="width: 100%;">
                                             @foreach($colors as $color)
                                                 <option
-                                                    {{ is_array( old('color_ids')) && in_array($tag->id, old('color_ids')) ? ' selected' : '' }}
+                                                    {{ is_array( old('color_ids')) && in_array($color->id, old('color_ids')) ? ' selected' : '' }}
                                                     value="{{ $color->id }}">{{ $color->name }}</option>
                                                 <li class="select2-selection__choice"
                                                     style="background: {{ $color->name }};"></li>
@@ -91,14 +85,13 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Size</label>
                                         <select class="select2bs4" name="size_ids[]" multiple="multiple"
                                                 data-placeholder="Select size" style="width: 100%;">
                                             @foreach($sizes as $size)
                                                 <option
-                                                    {{ is_array( old('size_ids')) && in_array($tag->id, old('size_ids')) ? ' selected' : '' }}
+                                                    {{ is_array( old('size_ids')) && in_array($size->id, old('size_ids')) ? ' selected' : '' }}
                                                     value="{{ $size->id }}">{{ $size->name }}</option>
                                             @endforeach
                                         </select>
@@ -108,17 +101,16 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Quantity</label>
-                                        <input type="text" class="form-control" name="quantity" value="{{ old('quantity') }}">
+                                        <input type="text" class="form-control" name="quantity"
+                                               value="{{ old('quantity') }}">
                                         <p class="text-danger">
                                             @error('quantity')
                                             {{ $message }}
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Availability status</label>
                                         <select class="form-control" name="status_id">
@@ -134,7 +126,6 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Price</label>
                                         <input type="text" class="form-control" name="price" value="{{ old('price') }}">
@@ -144,10 +135,10 @@
                                             @enderror
                                         </p>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Discount</label>
-                                        <input type="text" class="form-control" name="discount" value="{{ old('discount') }}">
+                                        <input type="text" class="form-control" name="discount"
+                                               value="{{ old('discount') }}">
                                         <p class="text-danger">
                                             @error('discount')
                                             {{ $message }}
@@ -155,17 +146,24 @@
                                         </p>
                                     </div>
                                 </div>
+{{--                                <div class="col-3">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Images</label>--}}
+{{--                                        <div class="custom-file">--}}
+{{--                                            <input type="file" class="custom-file-input" name="path[]" multiple>--}}
+{{--                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </div>
+                            </div>
                         </form>
-
                     </div>
                 </div>
-
             </div>
         </section>
-
     </div>
 @endsection
 

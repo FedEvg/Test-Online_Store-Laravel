@@ -26,7 +26,6 @@ class StoreRequest extends FormRequest
             'status_id' => 'required',
             'price' => 'required|integer',
             'discount' => '',
-            'image' => 'nullable|array'
         ];
     }
 }

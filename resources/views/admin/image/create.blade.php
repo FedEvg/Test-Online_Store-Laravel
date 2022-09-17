@@ -30,6 +30,21 @@
                         <form action="{{ route('admin.image.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
+                                <label>Clothing</label>
+                                <select class="form-control" name="clothing_id">
+                                    @foreach($clothes as $clothing)
+                                        <option
+                                            {{ $clothing->id === old($clothing->id) ? ' selected' : '' }}
+                                            value="{{ $clothing->id }}">{{ $clothing->fullTitle() }}</option>
+                                    @endforeach
+                                </select>
+                                <p class="text-danger">
+                                    @error('clothing_id')
+                                    {{ $message }}
+                                    @enderror
+                                </p>
+                            </div>
+                            <div class="form-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="path[]" multiple>
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>

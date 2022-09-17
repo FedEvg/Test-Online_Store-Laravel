@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Models\Clothing;
+use App\Models\Image;
 use Illuminate\Support\Facades\DB;
 
 class ClothingService
@@ -11,6 +12,7 @@ class ClothingService
     {
         try {
             DB::beginTransaction();
+
             $colorIds = $data['color_ids'];
             $sizeIds = $data['size_ids'];
 

@@ -8,20 +8,20 @@ use App\Models\Image;
 
 class StoreController extends Controller
 {
-    public function __invoke(StoreRequest $request)//
+    public function __invoke(StoreRequest $request)
     {
-        $request->validated();
+        $data = $request->validated();
 
-        $data = [];
-        if ($request->path) {
-            foreach ($request->path as $key => $image) {
-                $imageName = time() . rand(1, 99) . '.' . $image->extension();
-                $image->move(public_path('/storage/images'), $imageName);
+        $arr = [];
+        foreach ($data['path'] as $key => $image) {
+            $imageName = time() . rand(1, 99) . '.' . $image->extension();
+            $image->move(public_path('/storage/images'), $imageName);
 
-                $data[]['path'] = $imageName;
-            }
+            $arr[]['path'] = $imageName;
         }
-        foreach ($data as $key => $image) {
+
+        foreach ($arr as $key => $image) {
+            $image['clothing_id'] = $data['clothing_id'];
             Image::firstOrCreate($image);
         }
 

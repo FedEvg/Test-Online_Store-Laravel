@@ -8,7 +8,7 @@ class IndexController extends BaseController
 {
     public function __invoke()
     {
-        $clothes = Clothing::all();
+        $clothes = Clothing::all()->sortByDesc('created_at');
 
         return view('admin.clothing.index', compact('clothes'));
     }

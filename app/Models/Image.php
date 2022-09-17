@@ -13,4 +13,9 @@ class Image extends Model
     protected $table = 'images';
 
     protected $guarded = [];
+
+    public function clothing()
+    {
+        return $this->belongsTo(Clothing::class, 'clothing_id', 'id');
+    }
 }

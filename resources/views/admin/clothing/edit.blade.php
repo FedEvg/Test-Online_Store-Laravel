@@ -75,7 +75,7 @@
                                         data-placeholder="Select color" style="width: 100%;">
                                     @foreach($colors as $color)
                                         <option value="{{ $color->id }}"
-                                                {{ is_array($clothing->colors->pluck('id')->toArray()) && in_array($color->id, $clothing->colors->pluck('id')->toArray()) ? ' selected' : '' }}
+                                            {{ is_array($clothing->colors->pluck('id')->toArray()) && in_array($color->id, $clothing->colors->pluck('id')->toArray()) ? ' selected' : '' }}
                                         >{{ $color->name }}</option>
                                     @endforeach
                                 </select>

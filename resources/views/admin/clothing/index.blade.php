@@ -34,12 +34,12 @@
                     <div class="col-5">
                         <table class="table table-hover">
                             <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach($clothes as $clothing)
@@ -76,4 +76,3 @@
 
     </div>
 @endsection
-
