@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => '\App\Http\Controllers\Client', 'prefix' => 'client'], function () {
-    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+    Route::group(['namespace' => 'Main', 'prefix' => '/'], function () {
         Route::get('/', 'IndexController')->name('client.main.index');
     });
     Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => ['auth', 'verified']], function () {
@@ -15,12 +15,11 @@ Route::group(['namespace' => '\App\Http\Controllers\Client', 'prefix' => 'client
     Route::group(['namespace' => 'Cart', 'prefix' => 'cart', 'middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'IndexController')->name('client.cart.index');
     });
-    Route::group(['namespace' => 'Clothing', 'prefix' => 'clothing', 'middleware' => ['auth', 'verified']], function () {
+    Route::group(['namespace' => 'Clothing', 'prefix' => 'clothes', 'middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'IndexController')->name('client.clothing.index');
         Route::get('/{clothing}', 'ShowController')->name('client.clothing.index');
     });
 });
-
 
 Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth','admin', 'verified']], function () {
     Route::group(['namespace' => 'Main'], function () {

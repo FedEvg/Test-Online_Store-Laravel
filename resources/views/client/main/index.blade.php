@@ -46,7 +46,7 @@
             </div>
             <div class="product-filter-wrapper">
                 <div class="row">
-                    <!-- Product Filter -->
+
                     <div class="col-md-3 col-sm-6 col-xs-12 mb-20">
                         <div class="product-filter">
                             <h5>Price</h5>
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Product Filter -->
+
                     <div class="col-md-3 col-sm-6 col-xs-12 mb-20">
                         <div class="product-filter">
                             <h5>Size</h5>
@@ -111,6 +111,7 @@
             <div class="tab-content jump-3 pt-30">
                 <div id="shop-1" class="tab-pane active">
                     <div class="row">
+                        @foreach($clothes as $clothing)
                         <div class="custom-col-5">
                             <div class="product-wrap mb-50">
                                 <div class="product-img default-overlay mb-25">
@@ -124,392 +125,18 @@
                                         <a data-toggle="modal" data-target="#exampleModal" href="#"><i
                                                 class="fa fa-eye"></i><span>Quick Shop</span></a>
                                         <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
                                         <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
                                     </div>
                                 </div>
                                 <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Fashion sneaker winter</a></h3>
+                                    <h3><a href="product-details.html">{{ $clothing->fullTitle() }}</a></h3>
                                     <div class="product-price">
-                                        <span class="new-price">$28.00</span>
+                                        <span class="new-price">${{ $clothing->price }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-4.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-4-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">News strappy sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$26.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-1.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-1-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Check bermuda shorts</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$39.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-5.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-5-2.jpg') }}" alt="">
-                                        <span
-                                            class="badge-black badge-left-20 badge-top-20 badge-width-height-2 badge-border-radius-100">7.7%</span>
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Down puffer coat with collar</a></h3>
-                                    <div class="product-price">
-                                        <span class="old-price">$80.00</span>
-                                        <span class="new-price">$55.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-6.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-6-2.jpg') }}" alt="">
-                                        <span class="badge-black badge-right-0 badge-top-0 badge-width-height-1">sold uot</span>
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Bejewelled velvet sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$49.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-7.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-7-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Contrast faux fur jacket</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$55.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-8.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-8-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Bejewelled velvet sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$75.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-9.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-9-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Strappy sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$70.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-16.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-16-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Fashion sneaker winter</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$28.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-15.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-15-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">News strappy sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$26.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-14.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-14-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Check bermuda shorts</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$39.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-13.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-13-2.jpg') }}" alt="">
-                                        <span
-                                            class="badge-black badge-left-20 badge-top-20 badge-width-height-2 badge-border-radius-100">7.7%</span>
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Down puffer coat with collar</a></h3>
-                                    <div class="product-price">
-                                        <span class="old-price">$80.00</span>
-                                        <span class="new-price">$55.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-12.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-12-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Bejewelled velvet sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$49.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-11.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-11-2.jpg') }}" alt="">
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">Contrast faux fur jacket</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$55.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-col-5">
-                            <div class="product-wrap mb-50">
-                                <div class="product-img default-overlay mb-25">
-                                    <a href="product-details.html">
-                                        <img class="default-img"
-                                             src="{{ asset('assets/images/product/product-13.jpg') }}" alt="">
-                                        <img class="hover-img"
-                                             src="{{ asset('assets/images/product/product-13-2.jpg') }}" alt="">
-                                        <span
-                                            class="badge-white badge-text-black badge-left-20 badge-top-20 badge-width-height-1">12 Sold/31</span>
-                                    </a>
-                                    <div class="product-action product-action-position-1">
-                                        <a data-toggle="modal" data-target="#exampleModal" href="#"><i
-                                                class="fa fa-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Add to Wishlist" href="#"><i class="fa fa-heart"></i><span>Add to Wishlist</span></a>
-                                        <a class="icon-blod" title="Add to Compare" href="#"><i
-                                                class="dlicon arrows-4_compare"></i><span>Add to Compare</span></a>
-                                        <a title="Add to Cart" href="#"><i class="fa fa-shopping-cart"></i><span>Add to Cart</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-2 title-font-width-400 text-center">
-                                    <h3><a href="product-details.html">News strappy sandals</a></h3>
-                                    <div class="product-price">
-                                        <span class="new-price">$26.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div id="shop-2" class="tab-pane">

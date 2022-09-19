@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Clothing;
 
 use App\Http\Requests\Clothing\StoreRequest;
+use Illuminate\Support\Facades\Storage;
 
 class StoreController extends BaseController
 {

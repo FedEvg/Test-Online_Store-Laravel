@@ -24,9 +24,10 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => 'required|string|exists:categories,id',
-            'brand_id' => 'required|string|exists:brands,id',
-            'name' => 'required|string',
+            'category_id' => 'required|integer|exists:categories,id',
+            'brand_id' => 'required|integer|exists:brands,id',
+            'name' => 'required|string|unique:clothing,name,'.$this->clothing->id,
+            'preview_image' => '',
             'color_ids' => 'nullable|array',
 //            'color_id' => 'required|string|exists:colors,id',
             'size_ids' => 'nullable|array',
@@ -34,7 +35,7 @@ class UpdateRequest extends FormRequest
             'quantity' => 'required|integer',
             'status_id' => 'required',
             'price' => 'required|integer',
-            'discount' => ''
+            'discount' => '',
         ];
     }
 }

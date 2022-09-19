@@ -15,9 +15,10 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => 'required|string|exists:categories,id',
-            'brand_id' => 'required|string|exists:brands,id',
-            'name' => 'required|string',
+            'category_id' => 'required|integer|exists:categories,id',
+            'brand_id' => 'required|integer|exists:brands,id',
+            'name' => 'required|string|unique:clothing',
+            'preview_image' => 'required',
             'color_ids' => 'nullable|array',
 //            'color_id' => 'required|string|exists:colors,id',
             'size_ids' => 'nullable|array',

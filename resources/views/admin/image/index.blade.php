@@ -37,12 +37,17 @@
                                 <img src="{{ url('storage/images/' . $image->path) }}" alt="{{ $image->path }}" style="height: 10rem;" class="img-thumbnail">
                                 <hr>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-3">
+                                        <a href="{{ route('admin.image.show', $image->id) }}" class="nav-link text-warning">
+                                            <i class="nav-icon fa fa-solid fa-eye"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-3">
                                         <a href="{{ route('admin.image.edit', $image->id) }}" class="nav-link text-primary">
                                             <i class="nav-icon fa fa-solid fa-pen"></i>
                                         </a>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <form action="{{ route('admin.image.destroy', $image->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')

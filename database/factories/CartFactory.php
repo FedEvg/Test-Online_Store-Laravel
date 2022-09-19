@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClothingColor>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cart>
  */
-class ClothingColorFactory extends Factory
+class CartFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,7 @@ class ClothingColorFactory extends Factory
     public function definition()
     {
         return [
-            "clothing_id" => $this->faker->numberBetween(1, 100),
-            "color_id" => $this->faker->numberBetween(1, 10),
+            //
         ];
     }
 }

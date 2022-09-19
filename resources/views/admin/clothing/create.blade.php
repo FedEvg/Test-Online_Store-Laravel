@@ -30,13 +30,13 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>Category</label>
-                                        <select class="form-control" name="category_id">
-                                            @foreach($categories as $category)
-                                                <option
-                                                    {{ $category->id === old($category->id) ? ' selected' : '' }}
-                                                    value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endforeach
-                                        </select>
+                                            <select class="form-control" name="category_id">
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}
+                                                    {{ $category->id == old($category->id) ? 'selected ' : '' }}
+                                                    ">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
                                         <p class="text-danger">
                                             @error('category_id')
                                             {{ $message }}
@@ -47,9 +47,9 @@
                                         <label>Brand</label>
                                         <select class="form-control" name="brand_id">
                                             @foreach($brands as $brand)
-                                                <option
-                                                    {{ $brand->id === old($brand->id) ? ' selected' : '' }}
-                                                    value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                                <option value="{{ $brand->id }}
+                                                    {{ $brand->id == old($brand->id) ? 'selected ' : '' }}
+                                                    ">{{ $brand->name }}</option>
                                             @endforeach
                                         </select>
                                         <p class="text-danger">
@@ -146,15 +146,15 @@
                                         </p>
                                     </div>
                                 </div>
-{{--                                <div class="col-3">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label>Images</label>--}}
-{{--                                        <div class="custom-file">--}}
-{{--                                            <input type="file" class="custom-file-input" name="path[]" multiple>--}}
-{{--                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Preview image</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="preview_image">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </div>

@@ -64,9 +64,15 @@
                                 <td>{{ $clothing->brand->name }}</td>
                             </tr>
                             <tr>
+                                <th scope="row">Preview image</th>
+                                <td><img src="{{ url('storage/' . $clothing->preview_image) }}" alt="{{ $clothing->preview_image }}"
+                                         style="height: 10rem;" class="img-thumbnail"></td>
+                            </tr>
+                            <tr>
                                 <th scope="row">Colors</th>
                                 @foreach($clothing->colors as $color)
-                                    <td><i class="nav-icon fas fa-solid fa-circle" style="color: {{ $color->name }};"></i></td>
+                                    <td><i class="nav-icon fas fa-solid fa-circle"
+                                           style="color: {{ $color->name }};"></i></td>
                                 @endforeach
                             </tr>
                             <tr>
@@ -101,6 +107,23 @@
                             </tr>
                             </tbody>
 
+                        </table>
+                    </div>
+                    <div class="col-3">
+                        <table class="table table-striped table-hover">
+                            <tbody>
+                            @foreach($clothing->images as $image)
+                                <tr>
+                                    <th scope="row">ID</th>
+                                    <td>{{ $image->id }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Image</th>
+                                    <td><img src="{{ url('storage/images/' . $image->path) }}" alt="{{ $image->path }}"
+                                             style="height: 10rem;" class="img-thumbnail"></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

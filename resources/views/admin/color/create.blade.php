@@ -8,31 +8,13 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-2">
-                        <h1 class="m-0">Color {{ $color->name }}</h1>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="row">
-                            <div class="col">
-                                <a href="{{ route('admin.color.edit', $color->id) }}" class="nav-link text-primary">
-                                    <i class="nav-icon fa fa-solid fa-pen"></i>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <form action="{{ route('admin.color.destroy', $color->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="border-0 bg-transparent">
-                                        <i class="nav-icon fa fa-solid fa-trash text-danger"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Create color</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Color {{ $color->name }}</li>
+                            <li class="breadcrumb-item active">Create color</li>
                         </ol>
                     </div>
                 </div>
@@ -44,31 +26,21 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <table class="table table-striped table-hover">
-                            <tbody>
-                            <tr>
-                                <th scope="row">ID</th>
-                                <td>{{ $color->id }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Name</th>
-                                <td>{{ $color->name }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Created</th>
-                                <td>{{ $color->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Updated</th>
-                                <td>{{ $color->updated_at }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Deleted</th>
-                                <td>{{ $color->deleted_at }}</td>
-                            </tr>
-                            </tbody>
 
-                        </table>
+                        <form action="{{ route('admin.color.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label>Name color</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <p class="text-danger">
+                                @error('name')
+                                {{ $message }}
+                                @enderror
+                            </p>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </form>
+
                     </div>
                 </div>
 

@@ -31,9 +31,8 @@
                                 <label>Category</label>
                                 <select class="form-control" name="category_id">
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}"
-                                            {{ $category->id === $clothing->category->id ? ' selected' : '' }}
-                                        >{{ $category->name }}</option>
+                                        <option {{ $category->id === $clothing->category->id ? ' selected' : '' }}
+                                                value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -47,9 +46,8 @@
                                 <label>Brand</label>
                                 <select class="form-control" name="brand_id">
                                     @foreach($brands as $brand)
-                                        <option value="{{ $brand->id }}"
-                                            {{ $brand->id === $clothing->brand->id ? ' selected' : '' }}
-                                        >{{ $brand->name }}</option>
+                                        <option {{ $brand->id === $clothing->brand->id ? ' selected' : '' }}
+                                                value="{{ $brand->id }}">{{ $brand->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -148,7 +146,19 @@
                                 {{ $message }}
                                 @enderror
                             </p>
-
+                            <div class="form-group">
+                                <label>Preview image</label>
+                                <div class="w-50">
+                                    <img src="{{ url('storage/'. $clothing->preview_image) }}" alt="{{ $clothing->preview_image }}"
+                                         class="w-50">
+                                </div>
+                            <div class="form-group">
+                                <label>Preview image</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="preview_image">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary">Edit</button>
                         </form>
                     </div>

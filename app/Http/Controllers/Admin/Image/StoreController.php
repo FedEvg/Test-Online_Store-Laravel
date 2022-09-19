@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Image;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Image\StoreRequest;
 use App\Models\Image;
+use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller
 {
@@ -14,8 +15,9 @@ class StoreController extends Controller
 
         $arr = [];
         foreach ($data['path'] as $key => $image) {
-            $imageName = time() . rand(1, 99) . '.' . $image->extension();
+            $imageName = $image->getClientOriginalName();
             $image->move(public_path('/storage/images'), $imageName);
+//            $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
 
             $arr[]['path'] = $imageName;
         }

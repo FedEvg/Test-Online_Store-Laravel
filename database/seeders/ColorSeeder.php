@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ColorSeeder extends Seeder
 {
@@ -14,6 +14,17 @@ class ColorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('colors')->insert([
+            ['name' => 'Red'],
+            ['name' => 'OrangeRed'],
+            ['name' => 'Gold'],
+            ['name' => 'DeepPink'],
+            ['name' => 'Purple'],
+            ['name' => 'LimeGreen'],
+            ['name' => 'DarkOliveGreen'],
+            ['name' => 'DodgerBlue'],
+            ['name' => 'Gray'],
+            ['name' => 'Black']
+        ]);
     }
 }

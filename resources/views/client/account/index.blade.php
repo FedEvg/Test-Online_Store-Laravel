@@ -17,10 +17,10 @@
                         <a href="#download" data-toggle="tab"> Download</a>
                         <a href="#address-edit" data-toggle="tab"> address</a>
                         <a href="#account-info" data-toggle="tab"> Account Details</a>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <input data-toggle="tab" class="btn" type="submit" value="Log out"></input>
-                            </form>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input class="btn btn-danger btn-sm" type="submit" value="Log out"></input>
+                        </form>
                     </div>
 
 
@@ -30,7 +30,8 @@
                                 <div class="welcome">
                                     <p>Hello, <strong>{{ auth()->user()->fullName() }}</strong>!</p>
                                 </div>
-                                <p class="mb-0">From your account dashboard. you can view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
+                                <p class="mb-0">From your account dashboard. you can view your recent orders, manage
+                                    your shipping and billing addresses and edit your password and account details.</p>
                             </div>
                         </div>
 
@@ -92,13 +93,15 @@
                                             <td>Haven - Free Real Estate PSD Template</td>
                                             <td>Aug 22, 2018</td>
                                             <td>Yes</td>
-                                            <td><a href="#" class="check-btn sqr-btn "><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                            <td><a href="#" class="check-btn sqr-btn "><i
+                                                        class="fa fa-cloud-download"></i> Download File</a></td>
                                         </tr>
                                         <tr>
                                             <td>HasTech - Profolio Business Template</td>
                                             <td>Sep 12, 2018</td>
                                             <td>Never</td>
-                                            <td><a href="#" class="check-btn sqr-btn "><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                            <td><a href="#" class="check-btn sqr-btn "><i
+                                                        class="fa fa-cloud-download"></i> Download File</a></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -125,42 +128,48 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="single-input-item">
-                                                    <label for="first-name" class="required">First Name <span>*</span></label>
-                                                    <input type="text" id="first-name" />
+                                                    <label for="first-name" class="required">First Name
+                                                        <span>*</span></label>
+                                                    <input type="text" id="first-name"/>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="single-input-item">
-                                                    <label for="last-name" class="required">Last Name <span>*</span></label>
-                                                    <input type="text" id="last-name" />
+                                                    <label for="last-name" class="required">Last Name
+                                                        <span>*</span></label>
+                                                    <input type="text" id="last-name"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="single-input-item">
-                                            <label for="display-name" class="required">Display Name <span>*</span></label>
-                                            <input type="text" id="display-name" />
+                                            <label for="display-name" class="required">Display Name
+                                                <span>*</span></label>
+                                            <input type="text" id="display-name"/>
                                         </div>
                                         <div class="single-input-item">
                                             <label for="email" class="required">Email Addres <span>*</span></label>
-                                            <input type="email" id="email" />
+                                            <input type="email" id="email"/>
                                         </div>
                                         <fieldset>
                                             <legend>Password change</legend>
                                             <div class="single-input-item">
-                                                <label for="current-pwd" class="required">Current password (leave blank to leave unchanged)</label>
-                                                <input type="password" id="current-pwd" />
+                                                <label for="current-pwd" class="required">Current password (leave blank
+                                                    to leave unchanged)</label>
+                                                <input type="password" id="current-pwd"/>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="single-input-item">
-                                                        <label for="new-pwd" class="required">New password (leave blank to leave unchanged)</label>
-                                                        <input type="password" id="new-pwd" />
+                                                        <label for="new-pwd" class="required">New password (leave blank
+                                                            to leave unchanged)</label>
+                                                        <input type="password" id="new-pwd"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="single-input-item">
-                                                        <label for="confirm-pwd" class="required">Confirm new password</label>
-                                                        <input type="password" id="confirm-pwd" />
+                                                        <label for="confirm-pwd" class="required">Confirm new
+                                                            password</label>
+                                                        <input type="password" id="confirm-pwd"/>
                                                     </div>
                                                 </div>
                                             </div>
