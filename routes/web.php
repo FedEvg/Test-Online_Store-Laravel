@@ -11,13 +11,15 @@ Route::group(['namespace' => '\App\Http\Controllers\Client', 'prefix' => 'client
     });
     Route::group(['namespace' => 'Likes', 'prefix' => 'likes', 'middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'IndexController')->name('client.likes.index');
+        Route::delete('/{clothing}', 'DestroyController')->name('client.likes.destroy');
     });
     Route::group(['namespace' => 'Cart', 'prefix' => 'cart', 'middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'IndexController')->name('client.cart.index');
+        Route::delete('/{clothing}', 'DestroyController')->name('client.cart.destroy');
     });
     Route::group(['namespace' => 'Clothing', 'prefix' => 'clothes', 'middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'IndexController')->name('client.clothing.index');
-        Route::get('/{clothing}', 'ShowController')->name('client.clothing.index');
+        Route::get('/{clothing}', 'ShowController')->name('client.clothing.show');
     });
 });
 

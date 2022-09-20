@@ -25,42 +25,34 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td class="product-remove">
-                                                <a href="#"><i class="dlicon ui-1_simple-remove"></i></a>
-                                            </td>
-                                            <td class="product-img">
-                                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">High Collar Jacket</a></td>
-                                            <td class="product-price"><span class="amount">$26.00</span></td>
-                                            <td class="cart-quality">
-                                                <div class="product-details-quality quality-width-cart">
-                                                    <div class="cart-plus-minus">
-                                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                        @foreach($clothes as $clothing)
+                                            <tr>
+                                                <td class="product-remove">
+                                                    <form action="" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="border-0 bg-transparent">
+                                                            <i class="dlicon ui-1_simple-remove"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                                <td class="product-img">
+                                                    <img src="{{ url('storage/' . $clothing->preview_image) }}" alt="" style="width: 80px;"></a>
+                                                </td>
+                                                <td class="product-name"><a href="{{ route('client.clothing.show',$clothing->id) }}">{{ $clothing->fullTitle() }}</a></td>
+                                                <td class="product-price"><span class="amount">${{ number_format($clothing->price) }}</span></td>
+
+                                                <td class="cart-quality">
+                                                    <div class="product-details-quality quality-width-cart">
+                                                        <div class="cart-plus-minus">
+                                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td class="product-total"><span>$110.00</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-remove">
-                                                <a href="#"><i class="dlicon ui-1_simple-remove"></i></a>
-                                            </td>
-                                            <td class="product-img">
-                                                <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">High Collar Jacket</a></td>
-                                            <td class="product-price"><span class="amount">$26.00</span></td>
-                                            <td class="cart-quality">
-                                                <div class="product-details-quality quality-width-cart">
-                                                    <div class="cart-plus-minus">
-                                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="product-total"><span>$110.00</span></td>
-                                        </tr>
+                                                </td>
+                                                <td class="product-total"><span>$110.00</span></td>
+
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -81,7 +73,7 @@
                                     <div class="grand-total-content">
                                         <ul>
                                             <li>Subtotal <span> $87.00</span></li>
-                                            <li>Total <span>$87.00</span> </li>
+                                            <li>Total <span>$87.00</span></li>
                                         </ul>
                                     </div>
                                     <div class="grand-btn">

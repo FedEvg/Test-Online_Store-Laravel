@@ -44,7 +44,7 @@
                             <tbody>
                             @foreach($clothes as $clothing)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{ ($clothes->currentpage()-1) * $clothes->perpage() + $loop->index + 1 }}</th>
                                     <td>
                                         <a href="{{ route('admin.clothing.show', $clothing->id) }}" class="link-secondary">
                                             {{ $clothing->fullTitle() }}
@@ -68,6 +68,9 @@
                             @endforeach
                             </tbody>
                         </table>
+                        <div class="paginate">
+                            {{ $clothes->links() }}
+                        </div>
                     </div>
                 </div>
 

@@ -51,6 +51,6 @@ class Clothing extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class, 'id', 'clothing_id');
+        return $this->hasMany(Image::class, 'clothing_id', 'id');
     }
 }

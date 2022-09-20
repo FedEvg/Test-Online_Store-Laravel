@@ -20,65 +20,37 @@
                                             <th></th>
                                             <th>Product</th>
                                             <th>Stock Status</th>
-                                            <th> Price</th>
+                                            <th>Price</th>
                                             <th class="wishlist-cart-none"><span>Add to cart</span></th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($clothes as $clothing)
                                         <tr>
                                             <td class="wishlist-remove">
-                                                <a href="#"><i class="dlicon ui-1_simple-remove"></i></a>
+                                                <form action="{{ route('client.likes.destroy', $clothing->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="dlicon ui-1_simple-remove"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                             <td class="wishlist-img">
-                                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                                <img src="{{ url('storage/' . $clothing->preview_image) }}" alt="" style="width: 100px;"></a>
                                             </td>
                                             <td class="wishlist-name">
-                                                <a href="#">Embroidered logo shirt</a>
+                                                <a href="{{ route('client.clothing.show',$clothing->id) }}">{{ $clothing->fullTitle() }}</a>
                                             </td>
                                             <td class="wishlist-stock">
-                                                <span>In Stock</span>
+                                                <span>{{ $clothing->status_id }}</span>
                                             </td>
-                                            <td class="wishlist-price"><span class="amount">$26.00</span></td>
+                                            <td class="wishlist-price"><span class="amount">${{ number_format($clothing->price) }}</span></td>
                                             <td class="wishlist-cart">
                                                 <a href="#">Add to cart</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="wishlist-remove">
-                                                <a href="#"><i class="dlicon ui-1_simple-remove"></i></a>
-                                            </td>
-                                            <td class="wishlist-img">
-                                                <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
-                                            </td>
-                                            <td class="wishlist-name">
-                                                <a href="#">Floral lace dress</a>
-                                            </td>
-                                            <td class="wishlist-stock">
-                                                <span>In Stock</span>
-                                            </td>
-                                            <td class="wishlist-price"><span class="amount">$26.00</span></td>
-                                            <td class="wishlist-cart">
-                                                <a href="#">Add to cart</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="wishlist-remove">
-                                                <a href="#"><i class="dlicon ui-1_simple-remove"></i></a>
-                                            </td>
-                                            <td class="wishlist-img">
-                                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                                            </td>
-                                            <td class="wishlist-name">
-                                                <a href="#">Embroidered logo shirt</a>
-                                            </td>
-                                            <td class="wishlist-stock">
-                                                <span>In Stock</span>
-                                            </td>
-                                            <td class="wishlist-price"><span class="amount">$26.00</span></td>
-                                            <td class="wishlist-cart">
-                                                <a href="#">Add to cart</a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

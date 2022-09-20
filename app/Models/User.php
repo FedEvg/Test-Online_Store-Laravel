@@ -54,4 +54,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new SendVerifyWithQueueNotification());
     }
+
+    public function likedClothes()
+    {
+        return $this->belongsToMany(Clothing::class, 'clothing_user_likes', 'user_id', 'clothing_id');
+    }
+
+    public function cart()
+    {
+        return $this->belongsToMany(Clothing::class, 'carts', 'user_id', 'clothing_id');
+    }
 }

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Client\Clothing;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Clothing;
 
 class ShowController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Clothing $clothing)
     {
-        return view('client.clothing.show');
+        return view('client.clothing.show', compact('clothing'));
     }
 }

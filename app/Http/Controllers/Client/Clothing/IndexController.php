@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $clothes = Clothing::all();
+        $clothes = Clothing::query()->orderByDesc('created_at')->paginate(15);
         return view('client.clothing.index', compact('clothes'));
     }
 }
